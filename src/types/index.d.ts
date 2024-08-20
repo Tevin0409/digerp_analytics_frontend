@@ -19,3 +19,38 @@ declare type User = {
   full_name: string;
   role_id: number;
 };
+
+declare type QueryParams = {
+  page?: number;
+  limit?: number;
+  from?: string;
+  to?: string;
+};
+
+declare type DashboardSummaryResponse = {
+  message: string;
+  data: DataSummary[];
+  summary: {
+    totalRevenue: number;
+    totalExpenses: number;
+  };
+  pagination: Pagination;
+};
+
+declare type DateParams = {
+  from?: string;
+  to?: string;
+};
+
+declare type DataSummary = {
+  trans_date: string;
+  revenue: number;
+  expenses: number;
+};
+
+declare type Pagination = {
+  totalRecords: number;
+  totalPages: number;
+  currentPage: number;
+  pageSize: number;
+};
